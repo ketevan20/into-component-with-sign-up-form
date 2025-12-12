@@ -1,7 +1,10 @@
+import MainWrapper from "./components/MainWrapper/MainWrapper"
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <MainWrapper/>
+    </div>
   )
 }
 
