@@ -20,7 +20,7 @@ const FormContainer = () => {
                 initialValues={{ firstName: "", lastName: "", email: "", password: "" }}
                 validationSchema={schema}
                 onSubmit={(values, { resetForm }) => { 
-                    localStorage.setItem(JSON.stringify(values), 'user');
+                    localStorage.setItem('user', JSON.stringify(values));
                     resetForm();
                  }}
             >
