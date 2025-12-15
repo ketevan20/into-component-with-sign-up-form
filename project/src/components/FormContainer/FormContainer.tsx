@@ -4,14 +4,21 @@ import * as Yup from 'yup'
 const FormContainer = () => {
     const schema = Yup.object().shape({
         firstName: Yup.string()
-            .required("First Name cannot be empty"),
+            .required("First Name cannot be empty")
+            .min(2, "First Name must be at least 2 characters")
+            .matches(/^[A-Za-z]+$/, "First Name must contain only letters"),
         lastName: Yup.string()
-            .required("Last Name cannot be empty"),
+            .required("Last Name cannot be empty")
+            .min(2, "Last Name must be at least 2 characters")
+            .matches(/^[A-Za-z]+$/, "Last Name must contain only letters"),
         email: Yup.string()
             .required("Email can not be empty")
             .email("Looks like this is not an email"),            
         password: Yup.string()
             .required("Password can not be empty")
+            .min(8, "Password must be at least 8 characters")
+            .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
+            .matches(/[0-9]/, "Password must contain at least one number")
     })
 
     return (
